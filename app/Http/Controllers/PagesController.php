@@ -9,18 +9,9 @@ use Intervention\Image\Facades\Image;
 class PagesController extends Controller
 {
     public function home() {
-        $data=[
-            'name'=>'gamg',
-            'age'=> 18
-        ];
-        return view('welcome')->with($data);
+        return view('/login');
     }
 
-    public function login(){
-
-        return view('login');
-
-    }
 
     public function create(){
         return view('create');
@@ -60,7 +51,20 @@ class PagesController extends Controller
         return redirect('/list');
     }
 
+
+public function login(){
+    $student = Student::get();
+    return view('home');
 }
+
+
+public function static(){
+        return view('static');
+}
+}
+
+
+
 
 
 

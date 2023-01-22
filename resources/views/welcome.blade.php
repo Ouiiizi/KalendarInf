@@ -50,16 +50,13 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         $week .= '<td>';
     }
     $week .= $day . '</td>';
-
     // Sunday OR last day of the month
     if ($str % 7 == 0 || $day == $day_count) {
-
         // last day of the month
         if ($day == $day_count && $str % 7 != 0) {
             // Add empty cell(s)
             $week .= str_repeat('<td></td>', 7 - $str % 7);
         }
-
         $weeks[] = '<tr>' . $week . '</tr>';
 
         $week = '';
@@ -104,19 +101,20 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         </tbody>
     </table>
 </div>
-<form action="input_activity.php" method="post">
-    <div>  <input class="form-control" placeholder="Activity Name"  name="activity" type="text" autofocus> </div>
+<form action="input_activity.php" method="post" class="agming">
+    <center>  <input class="form-control" placeholder="Activity Name"  name="activity" type="text" autofocus> </center>
     <div class="form-group">
         <input class="form-control" placeholder="Description" name="description" type="Text" value="">
     </div>
     <div class="form-group">
         <input class="form-control" placeholder="Date of Activity" name="created_at" type="date" value="">
     </div>
-    <div class="form-group">
+    <center class="form-group">
         <center> <input type="submit" class="buton"></center>
-        </div>
-</form>
-
+    </center>
+</form><br>
+<a href="calelist.html">Calendar List.</a><br>
+<a href="dateconver.php">Conversion of Date.</a>
 </body>
 </html>
 
