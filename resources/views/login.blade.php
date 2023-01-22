@@ -9,18 +9,16 @@
 </head>
 
 
-<center> <form action="{{action([\App\Http\Controllers\PagesController::class,'login'])}}" method="get">
+<center> <form action="{{action([\App\Http\Controllers\PagesController::class,'loginForm'])}}" method="post">
+        @csrf
         <!--            <label class="userlabel" for="username">Username:</label>-->
         <input class="inputtext" type="text" name="username" id="username" placeholder="Username"><br>
         <!--            <label class = "pasword" for="password">Password:</label>-->
         <input class ="inputpas1" type="password"  name="password" id="password" placeholder="Password"><br>
         <!--            <label  class = "cpasword" for="confirm_password">Confirm Password:</label>-->
         <input class ="inputpas2" type="password"  name="confirm_password" id="confirm_password" placeholder="Confirm Password"><br>
-        <input id="main_div" class="button" type="submit" value="Sign In">
-
-
-        {{--        <a id="regbut" class ="fancy"href="home">Register</a>--}}
-        {{--        <a id ="logbut" class="fancy2" href="home">Login</a>--}}
+        <input id="main_div" class="button" class="fancy" type="submit" value="Sign In">
+        <a id="regbut" class ="fancy"href="register.blade.php">Register</a>
     </form>
     <style>
         .fancy {

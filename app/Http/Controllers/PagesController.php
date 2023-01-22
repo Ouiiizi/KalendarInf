@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class PagesController extends Controller
@@ -54,10 +55,19 @@ class PagesController extends Controller
 
 public function login(){
     $student = Student::get();
-    return view('home');
+    return view('login');
 }
 
-
+    public function loginForm(Request $request) {
+        $credentials = [
+            'email'=> $request->username,
+            'password'=> $request->password
+        ];
+        if(Auth::attempt($credentials)){
+            return redirect('/home'); } else{
+            return 'wrong credentials';
+        }
+    }
 public function static(){
         return view('static');
 }
