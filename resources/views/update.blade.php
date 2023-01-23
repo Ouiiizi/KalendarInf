@@ -8,18 +8,14 @@
     <title>Create</title>
 </head>
 <body>
-<form enctype="multipart/form-data" method="post" action="{{action([\App\Http\Controllers\PagesController::class,'update'])}}">
+<form enctype="multipart/form-data" method="post" action="{{action([\App\Http\Controllers\PagesController::class,'home']d}}">
     @csrf
     <input type="hidden" name="id" value="{{$student->id}}">
-    <label for="">Name:</label>
-    <input type="text" name="name" value="{{$student->name}}" required>
-    <label for="">Address</label>
-    <input type="text" name="address" value="{{$student->address}}" required>
-    <label for="">Age:</label>
-    <input type="number" name="age" value="{{$student->age}}" required>
-        <label for="">Image:</label>
-        <input type="file" name="image" required>
-
+    <label for="">Activity Name:</label>
+    <input type="text" name="name" value="{{$student->activity_name}}" required>
+    <label for="">Description</label>
+    <input type="text" name="address" value="{{$student->description}}" required>
+    <label for="">Date</label>
     <input type="submit" value="Update">
 </form>
 </body>

@@ -9,56 +9,43 @@ use Intervention\Image\Facades\Image;
 
 class PagesController extends Controller
 {
-    public function home() {
-        return view('/login');
+    public function home()
+    {
+        return view('login');
     }
 
 
-    public function create(){
+    public function create()
+    {
         return view('create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $student = new Student();
         $student->name = $request->name;
-        $student->address = $request->address;
-        $student->age = $request->age;
-        $img=Image::make($request->file('image'));
-        $filename=$request->file('image')->getClientOriginalName();
-        $img->save('storage/image/'.$filename);
+        $student->password = $request->password;
         $student->save();
         return 'Saved';
-
         $filenameWithExt = $request->file('image')->getClientOriginalName();
     }
 
 
-
-    public function update(Request $request){
-        $student = Student::where('id',$request->id)->first();
-        $student->name =$request->$name;
-    $student->age =$request->$age;
-    $student->location =$request->$location;
-    $student->dob =$request->$dob;
-    $student->save();
-    return redirect('/list');
-
-
-}
-
-
-    public function delete($id){
-        Student::where('id',$id) ->delete();
+    public function delete($id)
+    {
+        Student::where('id', $id)->delete();
         return redirect('/list');
     }
 
 
-public function login(){
-    $student = Student::get();
-    return view('login');
-}
+    public function login()
+    {
+        $student = Student::get();
+        return view('welcome');
+    }
 
-    public function loginForm(Request $request) {
+    public function loginForm(Request $request)
+    {
         $credentials = [
             'email'=> $request->username,
             'password'=> $request->password
@@ -68,13 +55,45 @@ public function login(){
             return 'wrong credentials';
         }
     }
-public function static(){
+
+    public function static()
+    {
         return view('static');
+    }
+
+
+    public function register(Request $request)
+    {
+
+        $data = $request->validate([
+            'name' => 'required',
+            'password' => 'required',
+
+        ]);
+
+        $student = new student();
+
+        $student->username = $data['username'];
+        $student->password = $data['password'];
+
+        return view('home');
+    }
+
+    public function registerdisplay()
+    {
+        return view('register');
+
+
+    }
+    public function list(){
+
+//        $list = new table();
+
+//        $list->
+
+
+    }
 }
-}
-
-
-
 
 
 

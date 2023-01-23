@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\PagesController::class,'login']);
-Route::get('/home', [\App\Http\Controllers\PagesController::class,'home']);
+Route::get('/', [\App\Http\Controllers\PagesController::class,'home'])->name('login');
 Route::get('/static',[App\Http\Controllers\PagesController::class,'static']);
-Route::get("login",[\App\Http\Controllers\PagesController::class,'login' ])->name('login');
 Route::post("loginForm",[\App\Http\Controllers\PagesController::class,'loginForm' ]);
+Route::get("list",[\App\Http\Controllers\PagesController::class,'list']);
+Route::post("register",[\App\Http\Controllers\PagesController::class,'register'])->name('store');
+Route::post("register",[\App\Http\Controllers\PagesController::class,'registerdisplay']);
 Route::post('/login',[\App\Http\Controllers\PagesController::class,'login']);
 Route::get('/create',[\App\Http\Controllers\PagesController::class, 'create']);
 Route::POST('/create',[\App\Http\Controllers\PagesController::class, 'store']);

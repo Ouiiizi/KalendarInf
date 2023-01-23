@@ -14,7 +14,7 @@
 <center><h4>Register to विजी's calendar</h4></center>
 <div class="container mt-4">
     <hr>
-    <center> <form action="register.php" method="post">
+    <center> <form action="{{action([\App\Http\Controllers\PagesController::class,'home'])}}" method="post">
             <!--            <label class="userlabel" for="username">Username:</label>-->
             <input id = "us1" class="input" type="text" name="username" id="username" placeholder="Username"><br>
             <!--            <label class = "pasword" for="password">Password:</label>-->

@@ -8,20 +8,17 @@
     <title>Table</title>
 </head>
 <body>
-<a href="{{url('/create')}}"><button>Create</button></a>
 <table>
     <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Age</th>
-        <th>Image</th>
+        <th>Activity Name</th>
+        <th>Description</th>
+        <th>date of activity</th>
     </tr>
     @foreach($students as $student)
         <tr>
-            <td>{{$student->name}}</td>
-            <td>{{$student->address}}</td>
-            <td>{{$student->age}}</td>
-            <td><img src="{{asset('storage/image/'.$student->image)}}"></td>
+            <td>{{$student->activity_name}}</td>
+            <td>{{$student->description}}</td>
+            <td>{{$student->date}}</td>
             <td><a href="{{url('/edit/'.$student->id)}}">Edit</a></td>
         </tr>
     @endforeach

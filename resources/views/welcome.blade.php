@@ -101,7 +101,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         </tbody>
     </table>
 </div>
-<form action="input_activity.php" method="post" class="agming">
+<form action="{{action([\App\Http\Controllers\PagesController::class,'list'])}}" method="post" class="agming">
     <center>  <input class="form-control" placeholder="Activity Name"  name="activity" type="text" autofocus> </center>
     <div class="form-group">
         <input class="form-control" placeholder="Description" name="description" type="Text" value="">
@@ -113,8 +113,139 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         <center> <input type="submit" class="buton"></center>
     </center>
 </form><br>
-<a href="calelist.html">Calendar List.</a><br>
-<a href="dateconver.php">Conversion of Date.</a>
+
+<style>
+
+    *{
+        background-color: white;
+    }
+
+
+    .container {
+        font-family: 'Montserrat', sans-serif;
+        margin: 60px auto;
+    }
+    .list-inline {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .title {
+        font-weight: bold;
+        font-size: 26px;
+        color: black;
+    }
+    th {
+        text-align: center;
+    }
+    td {
+        height: 100px;
+    }
+    th:nth-of-type(6), td:nth-of-type(6) {
+        color: blue;
+    }
+    th:nth-of-type(7), td:nth-of-type(7) {
+        color: red;
+
+    }
+
+    .today {
+        background-color: orange;
+    }
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+
+    .buton {
+        padding: 1.3em 3em;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .buton:hover {
+        background-color: black;
+        box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+
+    .buton:active {
+        transform: translateY(-1px);
+    }
+
+
+    .updateform {
+        position: relative;
+        display: inline-block;
+        max-width: 700px;
+        min-width: 500px;
+        box-sizing: border-box;
+        padding: 30px 25px;
+        background-color: white;
+        border-radius: 40px;
+        margin: 40px 0;
+        margin-right: 50px;
+    }
+
+
+
+    .input{
+        font-weight: 100;
+        letter-spacing: 0.01em;
+        margin-left: 15px;
+        margin-bottom:35px;
+        text-transform: uppercase;
+        color: black;
+    }
+
+
+    .link {
+        color: #090909;
+        padding: 0.7em 1.7em;
+        font-size: 18px;
+        border-radius: 0.5em;
+        background: #e8e8e8;
+        border: 1px solid #e8e8e8;
+        transition: all .3s;
+        box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    }
+
+    .link:hover {
+        border: 1px solid white;
+    }
+
+    .link:active {
+        box-shadow: 4px 4px 12px #c5c5c5,
+        -4px -4px 12px #ffffff;
+    }
+
+    .agming {
+        color: white;
+    }
+</style>
+{{--Calendar CSS--}}
 </body>
 </html>
 
