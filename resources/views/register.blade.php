@@ -21,13 +21,10 @@
             <input id="pas2" class ="input" type="password"  name="password" id="password" placeholder="Password"><br>
             <!--            <label  class = "cpasword" for="confirm_password">Confirm Password:</label>-->
             <input id="pas2" class ="input" type="password"  name="confirm_password" id="confirm_password" placeholder="Confirm Password"><br>
-            <button type="button" type="submit" value="Sign in">
+            <button type="button" type="submit" value="Sign in"></button>
+        </form>
+    </center>
 </div>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src="stylejs.js"></script>
-
 <style>
     .fancy {
         background-color: transparent;
@@ -318,9 +315,5 @@
     }
 
 </style>
-
-
 </body>
-
-
 </html>

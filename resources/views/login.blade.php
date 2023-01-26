@@ -9,15 +9,16 @@
 </head>
 
 
-<center>
-    @csrf
-    <!--            <label class="userlabel" for="username">Username:</label>-->
-    <input class="inputtext" type="text" name="username" id="username" placeholder="Username"><br>
-    <!--            <label class = "pasword" for="password">Password:</label>-->
-    <input class ="inputpas1" type="password"  name="password" id="password" placeholder="Password"><br>
-    <!--            <label  class = "cpasword" for="confirm_password">Confirm Password:</label>-->
-    <center> <input id="main_div" class="button" class="fancy" type="submit" value="Sign In">
-        <input id="main_div" class="button" class="fancy2" type="submit" value="Register"></center>
+<center> <form action="{{action([\App\Http\Controllers\PagesController::class,'loginForm'])}}" method="post">
+        @csrf
+        <!--            <label class="userlabel" for="username">Username:</label>-->
+        <input class="inputtext" type="text" name="username" id="username" placeholder="Username"><br>
+        <!--            <label class = "pasword" for="password">Password:</label>-->
+        <input class ="inputpas1" type="password"  name="password" id="password" placeholder="Password"><br>
+        <!--            <label  class = "cpasword" for="confirm_password">Confirm Password:</label>-->
+        <input id="main_div" class="button" class="fancy" type="submit" value="Sign In">
+    </form>
+    <center><input id="main_div" class="button" class="fancy2" type="submit" value="Register"></center>
 <style>
         .fancy {
             background-color: transparent;
