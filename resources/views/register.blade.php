@@ -14,14 +14,48 @@
 <center><h4>Register to विजी's calendar</h4></center>
 <div class="container mt-4">
     <hr>
-    <center> <form action="{{action([\App\Http\Controllers\PagesController::class,'home'])}}" method="post">
-            <!--            <label class="userlabel" for="username">Username:</label>-->
-            <input id = "us1" class="input" type="text" name="username" id="username" placeholder="Username"><br>
-            <!--            <label class = "pasword" for="password">Password:</label>-->
-            <input id="pas2" class ="input" type="password"  name="password" id="password" placeholder="Password"><br>
-            <!--            <label  class = "cpasword" for="confirm_password">Confirm Password:</label>-->
-            <input id="pas2" class ="input" type="password"  name="confirm_password" id="confirm_password" placeholder="Confirm Password"><br>
-            <button type="button" type="submit" value="Sign in"></button>
+    <center> <form method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                @error('name')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="password-confirm">Confirm Password</label>
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+        </form>
         </form>
     </center>
 </div>

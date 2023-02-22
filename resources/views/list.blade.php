@@ -1,25 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Table</title>
-</head>
+<html>
+<head></head>
 <body>
+<a href="{{url('/create')}}"></a><button>Create</button>
 <table>
     <tr>
-        <th>Activity Name</th>
-        <th>Description</th>
-        <th>date of activity</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Age</th>
+        <th>Image</th>
     </tr>
-    @foreach($students as $student)
+    @foreach($Student as $Student)
         <tr>
-            <td>{{$student->activity_name}}</td>
+            <td>{{$Student->activity_name}}</td>
             <td>{{$student->description}}</td>
             <td>{{$student->date}}</td>
-            <td><a href="{{url('/edit/'.$student->id)}}">Edit</a></td>
+            <td> <a href="{{url('/edit/'.$student->id)}}"> Edit</a></td>
+            <td> <a href="{{url('/delete/'.$student->id)}}"> Delete</a></td>
         </tr>
     @endforeach
 </table>

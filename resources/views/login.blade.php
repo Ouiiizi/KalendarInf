@@ -18,6 +18,8 @@
         <!--            <label  class = "cpasword" for="confirm_password">Confirm Password:</label>-->
         <input id="main_div" class="button" class="fancy" type="submit" value="Sign In">
     </form>
+    <form action="{{action([\App\Http\Controllers\PagesController::class,'registerdisplay'])}}" method="get"></form>
+    @csrf
     <center><input id="main_div" class="button" class="fancy2" type="submit" value="Register"></center>
 <style>
         .fancy {

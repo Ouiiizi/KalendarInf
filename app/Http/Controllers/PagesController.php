@@ -2,13 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Intervention\Image\Facades\Image;
+use App\Models\Lists;
+
 
 class PagesController extends Controller
 {
+
+    public function dashboard(){
+//        Mail::to('6942o.no@gmail.com')->send(new ContactMail());
+//    $data = [
+//        'name' => 'wizi is gang',
+//        'age' => 1246
+//    ];
+//    return view('dashboard')->with($data);
+    }
+
+    public function displayList()
+    {
+        return view('list');
+    }
     public function home()
     {
         return view('login');
@@ -27,7 +45,7 @@ class PagesController extends Controller
         $student->password = $request->password;
         $student->save();
         return 'Saved';
-        $filenameWithExt = $request->file('image')->getClientOriginalName();
+
     }
 
 
@@ -62,36 +80,16 @@ class PagesController extends Controller
     }
 
 
-    public function register(Request $request)
+    public function register()
     {
-
-        $data = $request->validate([
-            'name' => 'required',
-            'password' => 'required',
-
-        ]);
-
-        $student = new student();
-
-        $student->username = $data['username'];
-        $student->password = $data['password'];
-
-        return view('home');
+        return view('auth.register');
     }
 
-    public function registerdisplay()
-    {
+    public function registerdisplay(){
         return view('register');
-
-
     }
     public function list(){
-
-//        $list = new table();
-
-//        $list->
-
-
+        return view('list');
     }
 }
 
