@@ -101,7 +101,8 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         </tbody>
     </table>
 </div>
-<form method="post" class="agming">
+<form method="post" class="agming" action="{{ route('activity.store') }}">
+    @csrf
     <center>  <input class="form-control" placeholder="Activity Name"  name="activity" type="text" autofocus> </center>
     <div class="form-group">
         <input class="form-control" placeholder="Description" name="description" type="Text" value="">
