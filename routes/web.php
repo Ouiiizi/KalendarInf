@@ -14,13 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\PagesController::class,'login']);
-Route::get('/static',[App\Http\Controllers\PagesController::class,'static']);
 Route::post("loginForm",[\App\Http\Controllers\PagesController::class,'loginForm' ]);
-Route::get("/list",[\App\Http\Controllers\PagesController::class,'list']);
-Route::post("register",[\App\Http\Controllers\PagesController::class,'registerdisplay']);
-Route::get('/login',[\App\Http\Controllers\PagesController::class,'login']);
-Route::get('/list', [\App\Http\Controllers\PagesController::class,'displayList']);
-Route::get('/create',[\App\Http\Controllers\PagesController::class, 'create']);
 Route::POST('/create',[\App\Http\Controllers\PagesController::class, 'store']);
 
 

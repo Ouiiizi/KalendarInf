@@ -101,7 +101,7 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
         </tbody>
     </table>
 </div>
-<form action="{{action([\App\Http\Controllers\PagesController::class,'list'])}}" method="post" class="agming">
+<form method="post" class="agming">
     <center>  <input class="form-control" placeholder="Activity Name"  name="activity" type="text" autofocus> </center>
     <div class="form-group">
         <input class="form-control" placeholder="Description" name="description" type="Text" value="">
@@ -248,4 +248,3 @@ for ($day = 1; $day <= $day_count; $day++, $str++) {
 {{--Calendar CSS--}}
 </body>
 </html>
-
